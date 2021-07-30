@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    \App\Models\User::create(['name' => 'name', 'email' => 'admin@admin.com', 'password' => '12admin21']);
+    return \App\Models\User::all();
 });

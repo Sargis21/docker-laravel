@@ -2,11 +2,13 @@ FROM php:8.0-apache
 
 RUN a2enmod rewrite
 
-RUN apt-get update && apt-get install -y git unzip zip
+RUN apt-get update && apt-get install -y git unzip zip supervisor
 
 RUN addgroup --gid 1000 appuser; \
   adduser --uid 1000 --gid 1000 --disabled-password appuser; \
   adduser www-data appuser;
+
+#RUN usermod -u 1000 www-data
 
 WORKDIR /var/www/html
 
